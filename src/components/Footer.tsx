@@ -6,10 +6,10 @@ export function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <a href="/" className="inline-block mb-6">
-              <img src="/images/hously-logo.svg" alt="SIP Дома" width={120} height={32} className="w-auto h-6" />
+              <img src="/images/hously-logo.svg" alt="SIP Дома Омск" width={120} height={32} className="w-auto h-6" />
             </a>
             <p className="text-muted-foreground leading-relaxed max-w-sm">
-              Строим индивидуальные дома по канадской технологии SIP-панелей. Быстро, тепло и на десятилетия.
+              Строим индивидуальные дома по канадской технологии SIP-панелей в Омске и Омской области. Более 150 реализованных проектов.
             </p>
           </div>
 
@@ -45,38 +45,26 @@ export function Footer() {
             <h4 className="text-sm font-medium mb-4">Связь</h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li>
-                <a href="mailto:info@sip-dom.ru" className="hover:text-foreground transition-colors">
-                  info@sip-dom.ru
+                <a href="tel:+79503307252" className="hover:text-foreground transition-colors">
+                  +7 (950) 330-72-52
                 </a>
               </li>
               <li>
-                <a href="tel:+74951234567" className="hover:text-foreground transition-colors">
-                  +7 (495) 123-45-67
+                <a href="mailto:torvitmih@mail.ru" className="hover:text-foreground transition-colors">
+                  torvitmih@mail.ru
                 </a>
               </li>
-              <li>
-                <a href="#" className="hover:text-foreground transition-colors">
-                  Телеграм
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-foreground transition-colors">
-                  ВКонтакте
-                </a>
-              </li>
+              <li className="text-foreground/60">Омск и Омская область</li>
             </ul>
           </div>
         </div>
 
         {/* Bottom bar */}
         <div className="pt-8 border-t border-border flex flex-col md:flex-row md:items-center justify-between gap-4 text-sm text-muted-foreground">
-          <p>© 2025 SIP Дома. Все права защищены.</p>
+          <p>© 2025 SIP Дома Омск. Все права защищены.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-foreground transition-colors">
               Политика конфиденциальности
-            </a>
-            <a href="#" className="hover:text-foreground transition-colors">
-              Условия использования
             </a>
           </div>
         </div>
