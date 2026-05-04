@@ -1,5 +1,5 @@
 """
-Отправка заявки с сайта на email torvitmih@mail.ru через SMTP Mail.ru
+Отправка заявки с сайта на email torvitmih@mail.ru через SMTP Mail.ru.
 """
 import json
 import os
@@ -31,8 +31,16 @@ def handler(event: dict, context) -> dict:
                 "body": json.dumps({"error": "Укажите номер телефона"}),
             }
 
-        smtp_user = os.environ.get("SMTP_USER")
-        smtp_password = os.environ.get("SMTP_PASSWORD")
+        smtp_user = os.environ.get("SMTP_USER", "").strip()
+        smtp_password = os.environ.get("SMTP_PASSWORD", "").strip()
+
+        if not smtp_user or not smtp_password:
+            print("ERROR: SMTP_USER or SMTP_PASSWORD not set")
+            return {
+                "statusCode": 500,
+                "headers": headers,
+                "body": json.dumps({"error": "SMTP не настроен"}),
+            }
 
         msg = MIMEMultipart("alternative")
         msg["Subject"] = f"Новая заявка с сайта — {name or 'Без имени'}"
@@ -69,7 +77,8 @@ def handler(event: dict, context) -> dict:
         msg.attach(MIMEText(text_body, "plain", "utf-8"))
         msg.attach(MIMEText(html_body, "html", "utf-8"))
 
-        with smtplib.SMTP_SSL("smtp.mail.ru", 465) as server:
+        with smtplib.SMTP("smtp.mail.ru", 587, timeout=15) as server:
+            server.starttls()
             server.login(smtp_user, smtp_password)
             server.sendmail(smtp_user, "torvitmih@mail.ru", msg.as_string())
 
@@ -80,6 +89,8 @@ def handler(event: dict, context) -> dict:
         }
 
     except Exception as e:
+        import traceback
+        print("SMTP ERROR:", traceback.format_exc())
         return {
             "statusCode": 500,
             "headers": headers,
