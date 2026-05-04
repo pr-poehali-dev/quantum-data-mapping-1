@@ -3,23 +3,24 @@ import { HighlightedText } from "./HighlightedText"
 
 const philosophyItems = [
   {
-    title: "Минимализм со смыслом",
+    title: "Энергоэффективность класса A+",
     description:
-      "Каждый элемент имеет свое назначение и пространство для дыхания. Мы убираем лишнее, чтобы раскрыть то, что действительно важно.",
+      "SIP-панели обеспечивают теплосопротивление в 3–4 раза выше, чем традиционные материалы. Ваш дом потребляет минимум энергии, а счета за отопление снижаются до 70%.",
   },
   {
-    title: "Архитектурный подход",
+    title: "Скорость без компромиссов",
     description:
-      "Планировки, вдохновленные структурой, ритмом и материальностью. Здания, которые говорят через пропорции и свет.",
+      "Коробка дома возводится за 2–4 недели. Полная готовность к отделке — за 1–2 месяца. Точные заводские допуски исключают строительный брак и переделки.",
   },
   {
-    title: "Естественная динамика",
+    title: "Канадское качество в России",
     description:
-      "Движение поддерживает восприятие, но никогда не отвлекает. Анимация, которая ощущается естественно, как свет, скользящий по комнате.",
+      "Технология SIP зарекомендовала себя в условиях сурового канадского климата. Мы адаптировали её под российские реалии и нормативы, сохранив все преимущества.",
   },
   {
-    title: "Вневременная эстетика",
-    description: "Элегантный, спокойный и долговечный визуальный язык. Дизайн, который превосходит тренды и стареет с достоинством.",
+    title: "Долговечность и надёжность",
+    description:
+      "Срок службы SIP-дома — более 80 лет. Панели не гниют, не деформируются и устойчивы к влаге. Конструкция выдерживает сейсмические нагрузки и ураганный ветер.",
   },
 ]
 
@@ -53,17 +54,17 @@ export function Philosophy() {
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
           {/* Left column - Title and image */}
           <div className="lg:sticky lg:top-32 lg:self-start">
-            <p className="text-muted-foreground text-sm tracking-[0.3em] uppercase mb-6">Наша философия</p>
+            <p className="text-muted-foreground text-sm tracking-[0.3em] uppercase mb-6">Технология SIP</p>
             <h2 className="text-6xl md:text-6xl font-medium leading-[1.15] tracking-tight mb-6 text-balance lg:text-8xl">
-              Дизайн с
+              Строим умно
               <br />
-              <HighlightedText>намерением</HighlightedText>
+              <HighlightedText>и быстро</HighlightedText>
             </h2>
 
             <div className="relative hidden lg:block">
               <img
                 src="/images/exterior.png"
-                alt="Архитектурный эскиз рабочего пространства"
+                alt="Строительство дома по технологии SIP"
                 className="opacity-90 relative z-10 w-auto"
               />
             </div>
@@ -72,7 +73,7 @@ export function Philosophy() {
           {/* Right column - Description and Philosophy items */}
           <div className="space-y-6 lg:pt-48">
             <p className="text-muted-foreground text-lg leading-relaxed max-w-md mb-12">
-              Архитектура - это больше, чем конструкция. Это то, как мы воспринимаем мир. Мы создаем пространства, которые питают человеческий дух.
+              SIP-панель — это инженерный сэндвич из OSB-плит и пенополистирола. Прочно, тепло и точно. Именно так строит Канада, Скандинавия и весь цивилизованный мир.
             </p>
 
             {philosophyItems.map((item, index) => (
